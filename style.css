@@ -47,7 +47,6 @@
     font-weight: 600;
 }
 
-/* TOP BAR WRAPPER */
 .top-bar {
     width: 100%;
     max-width: 100%;
@@ -67,14 +66,12 @@
     flex-shrink: 0;
 }
 
-/* LOGO */
 .logo-box img {
     width: 6.5rem;
     height: auto;
     flex-shrink: 0;
 }
 
-/* NAVBAR */
 .navbar {
     width: auto;
     background: #d9531e;
@@ -86,7 +83,6 @@
     flex-shrink: 0;
 }
 
-/* NAV ITEMS LIST */
 .nav-list {
     display: flex;
     flex-wrap: nowrap;
@@ -94,7 +90,6 @@
     list-style: none;
 }
 
-/* EACH ITEM BOX */
 .nav-item {
     display: flex;
     align-items: center;
@@ -112,28 +107,24 @@
     position: relative;
 }
 
-/* REMOVE BORDER ON LAST ITEM */
 .nav-item:last-child {
     border-right: none;
 }
 
-/* ICONS */
 .nav-icon {
     width: 1.4rem;
     height: auto;
     object-fit: contain;
 }
 
-/* HOVER EFFECT */
 .nav-item:hover {
     background: rgb(15, 13, 13);
 }
-/* DROPDOWN WRAPPER */
+
 .dropdown {
     position: relative;
 }
 
-/* MEGA MENU BASE */
 .mega-menu {
     position: fixed;
     top: 5rem;
@@ -149,12 +140,10 @@
     box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.1);
 }
 
-/* SHOW ON HOVER */
 .dropdown:hover .mega-menu {
     display: flex;
 }
 
-/* Activities specific mega menu */
 .nav-item.activities .mega-menu {
     flex-direction: column;
     align-items: stretch;
@@ -189,7 +178,6 @@
     text-transform: uppercase;
 }
 
-/* Transport specific mega menu */
 .nav-item.transport .mega-menu {
     flex-direction: row;
     align-items: flex-start;
@@ -314,7 +302,6 @@
     background: #cc4e1f;
 }
 
-/* COLUMNS */
 .mega-col {
     flex: 0 0 auto;
     display: flex;
@@ -374,7 +361,6 @@
     gap: 0.8rem;
 }
 
-/* DESTINATION GRID */
 .dest-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -382,7 +368,6 @@
     margin-bottom: 1rem;
 }
 
-/* RIGHT SIDE TRAVEL CARDS */
 .cards-col {
     flex: 1;
     display: flex;
@@ -397,7 +382,6 @@
     gap: 1rem;
 }
 
-/* INDIVIDUAL CARD */
 .v-card {
     background: #fff;
     border-radius: 0.4rem;
@@ -428,7 +412,6 @@
     margin-left: 0.5rem;
 }
 
-/* CARD LABEL TAG */
 .tag {
     position: absolute;
     top: 0.5rem;
@@ -441,7 +424,6 @@
     border-radius: 0 0.4rem 0.4rem 0;
 }
 
-/* Responsive tweaks using rem-based breakpoints */
 @media (min-width: 1500px) and (max-width: 2000px) {
     .navbar{
         margin-left: 45rem;
@@ -482,7 +464,6 @@
     }
 }
 
-/* Responsive tweaks for last-minute section */
 @media (max-width: 80rem) {
     .bg-top-image {
         width: 42vw;
@@ -748,7 +729,6 @@
     background-color: #ff5733;
 }
 
-/* make second featured card taller to balance left list height */
 .tours-right .featured-card:last-child {
     height: 30rem;
 }
@@ -828,7 +808,6 @@
     margin-top: 0.5rem;
 }
 
-/* FLEET SECTION */
 .fleet-section {
     padding: 3rem 5vw;
     max-width: 90rem;
@@ -924,22 +903,16 @@
     font-weight: bold;
 }
 
-/* LAST MINUTE OFFERS */
-/* Full section */
 .last-minute-section {
     position: relative;
     width: 100%;
     min-height: 140vh;
     background-image: url('images/banner-image.jpg');
-    /* MAIN background */
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 
-/* ---------------------- FOREGROUND IMAGES ---------------------- */
-
-/* Top-left image */
 .bg-top-image {
     position: absolute;
     top: 5vh;
@@ -956,7 +929,6 @@
     display: block;
 }
 
-/* Bottom-right image */
 .bg-bottom-image {
     position: absolute;
     right: 3vw;
@@ -973,7 +945,6 @@
     display: block;
 }
 
-/* ---------------------- BLACK LABEL BOX ---------------------- */
 
 .last-minute-label {
     position: absolute;
@@ -989,8 +960,6 @@
     z-index: 12;
     text-transform: uppercase;
 }
-
-/* ---------------------- TEXT CONTENT ---------------------- */
 
 .last-minute-content-wrapper {
     position: absolute;
@@ -1024,8 +993,6 @@
     font-weight: 700;
 }
 
-/* ---------------------- BUTTON ---------------------- */
-
 .cta-btn {
     display: inline-block;
     margin-top: 2rem;
@@ -1043,8 +1010,6 @@
     background: #000;
 }
 
-
-/* DESIGNED FOR YOU */
 .designed-section {
     padding: 3rem 5vw;
     max-width: 100rem;
@@ -1079,7 +1044,6 @@
     border-radius: 0.5rem;
 }
 
-/* FEATURES */
 .features-section {
     padding: 4rem 5vw;
     background-color: #ffffff;
@@ -1120,7 +1084,6 @@
     height: 3rem;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    /* Makes icons white */
 }
 
 .feature-item h3 {
@@ -1130,14 +1093,12 @@
     font-weight: 600;
 }
 
-/* FOOTER */
 .footer {
     padding: 2rem 3vw;
     background-color: #2b2b2b;
     color: #ffffff;
 }
 
-/* MAIN WRAPPER */
 .footer-inner {
     max-width: 85rem;
     margin: 0 auto;
@@ -1147,7 +1108,6 @@
     gap: 5vw;
 }
 
-/* LEFT SECTION */
 .footer-left {
     flex: 1;
     display: flex;
@@ -1176,13 +1136,12 @@
     font-size: 1rem;
 }
 
-/* CENTER SECTION */
 .footer-center {
     flex: 0 0 auto;
     display: flex;
     text-align: left;
     flex-direction: column;
-    align-items: flex-start;     /* ALIGN to LEFT */
+    align-items: flex-start;    
     justify-content: flex-start;
     gap: 1rem;
 }
@@ -1193,7 +1152,6 @@
     margin: 0;
 }
 
-/* SOCIAL ICONS */
 .social-row {
     display: flex;
     gap: 0.8rem;
@@ -1217,12 +1175,10 @@
     filter: brightness(0) invert(1);
 }
 
-/* RIGHT GAP (invisible, used for alignment) */
 .footer-gap {
     flex: 1;
 }
 
-/* FOOTER BOTTOM */
 .footer-bottom {
     max-width: 85rem;
     margin: 3rem auto 0;
