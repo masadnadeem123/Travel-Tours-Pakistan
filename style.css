@@ -275,6 +275,82 @@
     }
 }
 
+/* Responsive tweaks for last-minute section */
+@media (max-width: 80rem) {
+    .bg-top-image {
+        width: 42vw;
+    }
+
+    .bg-bottom-image {
+        width: 30vw;
+    }
+
+    .last-minute-label {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 60rem) {
+    .last-minute-content-wrapper {
+        right: 4vw;
+        width: 45vw;
+    }
+
+    .bg-top-image {
+        left: 4vw;
+        top: 6vh;
+        width: 46vw;
+    }
+
+    .bg-bottom-image {
+        right: 4vw;
+        width: 34vw;
+    }
+}
+
+@media (max-width: 40rem) {
+    .last-minute-section {
+        min-height: auto;
+        padding: 4rem 3vw;
+    }
+
+    .bg-top-image,
+    .bg-bottom-image,
+    .last-minute-label {
+        position: relative;
+        width: 100%;
+        left: auto;
+        right: auto;
+        top: auto;
+        transform: none;
+        margin-bottom: 1rem;
+    }
+
+    .bg-top-image img,
+    .bg-bottom-image img {
+        border-radius: 0.5rem;
+    }
+
+    .last-minute-content-wrapper {
+        position: relative;
+        right: auto;
+        top: auto;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        text-align: left;
+        padding: 0 1rem;
+    }
+
+    .last-minute-content h2 {
+        font-size: 2rem;
+    }
+
+    .last-minute-content p {
+        font-size: 1rem;
+    }
+}
+
 .tours-section {
     padding: 3rem 5vw;
     max-width: 90rem;
@@ -646,7 +722,7 @@
 .last-minute-section {
     position: relative;
     width: 100%;
-    min-height: 180vh;
+    min-height: 100vh;
     background-image: url('images/banner-image.jpg');
     /* MAIN background */
     background-size: cover;
@@ -659,47 +735,51 @@
 /* Top-left image */
 .bg-top-image {
     position: absolute;
-    top: 5%;
-    left: 3%;
-    width: 48%;
-    z-index: 5;
+    top: 5vh;
+    left: 3vw;
+    width: 48vw;
+    max-width: 55%;
+    z-index: 6;
 }
 
 .bg-top-image img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0.6rem;
     object-fit: cover;
+    display: block;
 }
 
 /* Bottom-right image */
 .bg-bottom-image {
     position: absolute;
-    right: 2%;
-    bottom: 3%;
-    width: 48%;
-    z-index: 5;
+    right: 3vw;
+    bottom: 4vh;
+    width: 35vw;
+    max-width: 45%;
+    z-index: 6;
 }
 
 .bg-bottom-image img {
     width: 100%;
-    border-radius: 10px;
+    border-radius: 0.6rem;
     object-fit: cover;
+    display: block;
 }
 
 /* ---------------------- BLACK LABEL BOX ---------------------- */
 
 .last-minute-label {
     position: absolute;
-    top: 35%;
-    left: 5%;
+    top: 34vh;
+    left: 3vw;
     background: #000;
     color: white;
-    font-size: 2.8rem;
-    font-weight: 700;
-    line-height: 1.2;
-    padding: 2rem 3rem;
-    border-radius: 10px;
-    z-index: 10;
+    font-size: 2.4rem;
+    font-weight: 800;
+    line-height: 1.05;
+    padding: 1.2rem 1.6rem;
+    border-radius: 0.6rem;
+    z-index: 12;
     text-transform: uppercase;
 }
 
@@ -707,26 +787,28 @@
 
 .last-minute-content-wrapper {
     position: absolute;
-    right: 6%;
-    top: 15%;
-    width: 40%;
-    z-index: 10;
+    right: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 40vw;
+    max-width: 46rem;
+    z-index: 12;
 }
 
 .last-minute-content {
-    max-width: 32rem;
+    max-width: 36rem;
 }
 
 .last-minute-content h2 {
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 800;
     color: #2d2d2d;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
 }
 
 .last-minute-content p {
-    font-size: 1.15rem;
-    line-height: 1.9rem;
+    font-size: 1.1rem;
+    line-height: 1.8rem;
     color: #333;
 }
 
