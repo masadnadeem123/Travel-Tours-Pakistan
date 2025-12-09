@@ -16,7 +16,10 @@
                 <img src="images/logo.png" alt="Travel &amp; Tours Logo">
             </div>
 
-            <nav class="navbar">
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-btn" onclick="toggleMenu()">MENU ☰</button>
+
+            <nav class="navbar" id="navbar">
                 <ul class="nav-list">
                     <li class="nav-item dropdown">
                         <img src="images/icons/tree.png" class="nav-icon" alt="">
@@ -327,12 +330,9 @@
                 </ul>
             </nav>
 
-             
-
         </div>
 
         <div class="hero-text">
-            <p class="hero-subtitle">ARE YOU LOOKING FOR A FAMILY VACATION IN PAKISTAN?</p>
             <h1 class="hero-title">DISCOVERY OF NATURAL WONDERS</h1>
             <a href="#" class="hero-link">What our team has found on Rhodes</a>
         </div>
@@ -910,5 +910,18 @@
     </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
+
+        // Close menu when clicking on a nav item
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.getElementById('navbar').classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
