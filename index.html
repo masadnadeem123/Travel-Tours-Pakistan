@@ -16,8 +16,7 @@
                 <img src="images/logo.png" alt="Travel &amp; Tours Logo">
             </div>
 
-            <!-- MOBILE MENU BUTTON -->
-            <button class="menu-btn" onclick="toggleMenu()">MENU ☰</button>
+            <button class="menu-btn">MENU ☰</button>
 
             <nav class="navbar" id="navbar">
                 <ul class="nav-list">
@@ -910,18 +909,5 @@
     </div>
     </footer>
 
-    <script>
-        function toggleMenu() {
-            const navbar = document.getElementById('navbar');
-            navbar.classList.toggle('active');
-        }
-
-        // Close menu when clicking on a nav item
-        document.querySelectorAll('.nav-item').forEach(item => {
-            item.addEventListener('click', function() {
-                document.getElementById('navbar').classList.remove('active');
-            });
-        });
-    </script>
 </body>
 </html>
