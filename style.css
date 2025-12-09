@@ -31,7 +31,7 @@
     font-size: 1rem;
     font-weight: bold;
     color: #ffd140;
-    margin-bottom: 35rem;
+    margin-bottom: 3.5rem;
 }
 
 .hero-title {
@@ -47,38 +47,47 @@
     font-weight: 600;
 }
 
-/* TOP BAR WRAPPER */
+/* MENU BUTTON - Hidden on desktop, shown on mobile */
+.menu-btn {
+    display: none;
+}
+
 .top-bar {
     width: 100%;
-    padding: 0;
+    max-width: 100%;
+    padding: 0 2vw;
     display: flex;
     align-items: center;
-    gap: 1rem;
+    justify-content: space-between;
+    gap: 1.5rem;
     position: absolute;
     top: 1.2rem;
-    left: 3vw;
-    right: 3vw;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
 }
 
-/* LOGO */
+.logo-box {
+    flex-shrink: 0;
+}
+
 .logo-box img {
-    width: 7.5rem;
+    width: 6.5rem;
     height: auto;
+    flex-shrink: 0;
 }
 
-/* NAVBAR */
 .navbar {
     width: auto;
     background: #d9531e;
     display: flex;
     align-items: center;
-    border-radius: 0.5rem;
+    border-radius: 0;
     overflow: visible;
     position: relative;
-    margin-left: 6rem;
+    flex-shrink: 0;
 }
 
-/* NAV ITEMS LIST */
 .nav-list {
     display: flex;
     flex-wrap: nowrap;
@@ -86,14 +95,13 @@
     list-style: none;
 }
 
-/* EACH ITEM BOX */
 .nav-item {
     display: flex;
     align-items: center;
-    gap: 0.7rem;
-    padding: 0.9rem 1.2rem;
+    gap: 0.5rem;
+    padding: 1rem 1rem;
     color: #fff;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
     cursor: pointer;
     border-right: 0.1rem solid rgba(255, 255, 255, 0.3);
@@ -104,124 +112,310 @@
     position: relative;
 }
 
-/* REMOVE BORDER ON LAST ITEM */
 .nav-item:last-child {
     border-right: none;
 }
 
-/* ICONS */
 .nav-icon {
     width: 1.4rem;
     height: auto;
     object-fit: contain;
 }
 
-/* HOVER EFFECT */
 .nav-item:hover {
     background: rgb(15, 13, 13);
 }
-/* DROPDOWN WRAPPER */
+
 .dropdown {
     position: relative;
 }
 
-/* MEGA MENU BASE */
 .mega-menu {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 5rem;
     left: 0;
-    width: 100vw;
+    right: 0;
+    width: 100%;
     background: #fff;
-    padding: 2rem;
+    padding: 2rem 3rem;
     display: none;
     flex-wrap: nowrap;
-    gap: 3rem;
-    box-shadow: 0 0.5rem 1rem rgba(0,0,0,0.2);
+    gap: 2rem;
     z-index: 50;
 }
 
-/* SHOW ON HOVER */
 .dropdown:hover .mega-menu {
     display: flex;
 }
 
-/* COLUMNS */
-.mega-col {
+.nav-item.activities .mega-menu {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 2.2rem 4rem 2rem;
+}
+
+.activities-menu-heading {
+    text-align: center;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 1.1rem;
+    letter-spacing: 0.02em;
+}
+
+.activities-columns {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(180px, 1fr));
+    gap: 1rem 2.5rem;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+}
+
+.activities-menu .mega-col {
+    min-width: 0;
+    gap: 0.35rem;
+}
+
+.activities-menu .mega-col h3 {
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.nav-item.transport .mega-menu {
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 2.2rem 3rem 2.2rem;
+    gap: 3rem;
+}
+
+.transport-columns {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 2.5rem;
+    width: auto;
+    flex: 0 0 auto;
+}
+
+.transport-menu .mega-col {
+    min-width: 0;
+    gap: 0.4rem;
+    flex: none;
+}
+
+.transport-menu .mega-col h3 {
+    letter-spacing: 0.02em;
+    margin-bottom: 0.7rem;
+}
+
+.transport-menu .mega-col a {
+    font-size: 0.93rem;
+}
+
+.transport-cards-block {
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: 0.7rem;
+    gap: 1rem;
+}
+
+.transport-cards-heading {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #2f2f2f;
+    margin-bottom: 0.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+}
+
+.transport-card-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+}
+
+.transport-card {
+    background: transparent;
+    border-radius: 0.3rem;
+    box-shadow: none;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.transport-card img {
+    width: 100%;
+    height: 140px;
+    object-fit: contain;
+    object-position: center;
+    border-radius: 0.4rem;
+    background: #f5f5f5;
+    padding: 0.8rem;
+}
+
+.transport-card-body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.transport-card h4 {
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    margin: 0;
+    font-weight: 700;
+}
+
+.transport-card .type {
+    font-size: 0.8rem;
+    color: #888;
+}
+
+.transport-card .price {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-top: 0.15rem;
+}
+
+.transport-card .specs {
+    font-size: 0.75rem;
+    color: #888;
+    line-height: 1.3;
+}
+
+.book-btn {
+    margin-top: 0.5rem;
+    align-self: flex-start;
+    background: #e65a23;
+    color: #fff;
+    border: none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1.4rem;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    transition: background 0.2s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.book-btn:hover {
+    background: #cc4e1f;
+}
+
+.mega-col {
+    flex: 0 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    min-width: 200px;
+}
+
+.mega-col:first-child {
+    flex: 0 0 250px;
+}
+
+.mega-col:nth-child(2) {
+    flex: 0 0 350px;
 }
 
 .mega-col h3 {
-    font-size: 1.2rem;
-    color: #333;
+    font-size: 1.1rem;
+    color: #1a1a1a;
     font-weight: 700;
-    margin-bottom: 0.6rem;
+    margin-bottom: 0.8rem;
+    margin-top: 1rem;
+}
+
+.mega-col h3:first-child {
+    margin-top: 0;
 }
 
 .mega-col a {
     color: #d9531e;
-    font-size: 1rem;
+    font-size: 0.95rem;
     text-decoration: none;
+    padding: 0.2rem 0;
+}
+
+.mega-col a:hover {
+    text-decoration: underline;
 }
 
 .mega-col p {
     font-size: 0.9rem;
-    color: #444;
+    color: #666;
+    line-height: 1.4;
 }
 
-/* DESTINATION GRID */
-.dest-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem 2rem;
+.mega-col h4 {
+    font-size: 0.95rem;
+    color: #1a1a1a;
+    font-weight: 600;
+    margin-top: 0.5rem;
+    margin-bottom: 0.2rem;
 }
 
-/* RIGHT SIDE TRAVEL CARDS */
-.cards-col {
-    flex: 2;
+.retreat {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 0.8rem;
+}
+
+.dest-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.cards-col {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    max-width: 900px;
 }
 
 .card-row {
-    display: flex;
-    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
 }
 
-/* INDIVIDUAL CARD */
 .v-card {
-    width: 12rem;
     background: #fff;
     border-radius: 0.4rem;
     box-shadow: 0 0.2rem 0.6rem rgba(0,0,0,0.15);
-    padding-bottom: 1rem;
+    padding-bottom: 0.8rem;
     position: relative;
+    overflow: hidden;
 }
 
 .v-card img {
     width: 100%;
     height: 8rem;
     object-fit: cover;
-    border-radius: 0.4rem 0.4rem 0 0;
+    display: block;
 }
 
 .v-card h4 {
-    font-size: 1rem;
-    margin: 0.5rem 0 0 0.5rem;
+    font-size: 0.9rem;
+    margin: 0.5rem 0.5rem 0.2rem 0.5rem;
     font-weight: 700;
-    color: #333;
+    color: #1a1a1a;
+    line-height: 1.2;
 }
 
 .v-card p {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: #666;
     margin-left: 0.5rem;
 }
 
-/* CARD LABEL TAG */
 .tag {
     position: absolute;
     top: 0.5rem;
@@ -232,123 +426,6 @@
     font-size: 0.8rem;
     font-weight: 700;
     border-radius: 0 0.4rem 0.4rem 0;
-}
-
-/* Responsive tweaks using rem-based breakpoints */
-@media (min-width: 1500px) and (max-width: 2000px) {
-    .navbar{
-        margin-left: 45rem;
-    }
-}
-
-@media (max-width: 40rem) {
-    .hero {
-        flex-direction: column;
-        justify-content: center;
-    }
-
-    .top-bar {
-        flex-direction: column;
-        align-items: stretch;
-        position: static;
-        padding: 1rem 3vw;
-    }
-
-    .navbar {
-        width: 100%;
-    }
-
-    .nav-list {
-        justify-content: center;
-        flex-wrap: wrap;
-    }
-
-    .hero-text {
-        padding: 2.5vh 4vw;
-        max-width: 92vw;
-        text-align: center;
-        align-items: center;
-    }
-
-    .yellow-text {
-        font-size: 1.1rem;
-    }
-}
-
-/* Responsive tweaks for last-minute section */
-@media (max-width: 80rem) {
-    .bg-top-image {
-        width: 42vw;
-    }
-
-    .bg-bottom-image {
-        width: 30vw;
-    }
-
-    .last-minute-label {
-        font-size: 2rem;
-    }
-}
-
-@media (max-width: 60rem) {
-    .last-minute-content-wrapper {
-        right: 4vw;
-        width: 45vw;
-    }
-
-    .bg-top-image {
-        left: 4vw;
-        top: 6vh;
-        width: 46vw;
-    }
-
-    .bg-bottom-image {
-        right: 4vw;
-        width: 34vw;
-    }
-}
-
-@media (max-width: 40rem) {
-    .last-minute-section {
-        min-height: auto;
-        padding: 4rem 3vw;
-    }
-
-    .bg-top-image,
-    .bg-bottom-image,
-    .last-minute-label {
-        position: relative;
-        width: 100%;
-        left: auto;
-        right: auto;
-        top: auto;
-        transform: none;
-        margin-bottom: 1rem;
-    }
-
-    .bg-top-image img,
-    .bg-bottom-image img {
-        border-radius: 0.5rem;
-    }
-
-    .last-minute-content-wrapper {
-        position: relative;
-        right: auto;
-        top: auto;
-        transform: none;
-        width: 100%;
-        max-width: 100%;
-        text-align: left;
-        padding: 0 1rem;
-    }
-
-    .last-minute-content h2 {
-        font-size: 2rem;
-    }
-
-    .last-minute-content p {
-        font-size: 1rem;
-    }
 }
 
 .tours-section {
@@ -541,7 +618,6 @@
     background-color: #ff5733;
 }
 
-/* make second featured card taller to balance left list height */
 .tours-right .featured-card:last-child {
     height: 30rem;
 }
@@ -621,7 +697,6 @@
     margin-top: 0.5rem;
 }
 
-/* FLEET SECTION */
 .fleet-section {
     padding: 3rem 5vw;
     max-width: 90rem;
@@ -717,22 +792,16 @@
     font-weight: bold;
 }
 
-/* LAST MINUTE OFFERS */
-/* Full section */
 .last-minute-section {
     position: relative;
     width: 100%;
-    min-height: 100vh;
+    min-height: 140vh;
     background-image: url('images/banner-image.jpg');
-    /* MAIN background */
     background-size: cover;
     background-position: center;
     overflow: hidden;
 }
 
-/* ---------------------- FOREGROUND IMAGES ---------------------- */
-
-/* Top-left image */
 .bg-top-image {
     position: absolute;
     top: 5vh;
@@ -749,7 +818,6 @@
     display: block;
 }
 
-/* Bottom-right image */
 .bg-bottom-image {
     position: absolute;
     right: 3vw;
@@ -766,11 +834,10 @@
     display: block;
 }
 
-/* ---------------------- BLACK LABEL BOX ---------------------- */
 
 .last-minute-label {
     position: absolute;
-    top: 34vh;
+    top: 60vh;
     left: 3vw;
     background: #000;
     color: white;
@@ -782,8 +849,6 @@
     z-index: 12;
     text-transform: uppercase;
 }
-
-/* ---------------------- TEXT CONTENT ---------------------- */
 
 .last-minute-content-wrapper {
     position: absolute;
@@ -817,8 +882,6 @@
     font-weight: 700;
 }
 
-/* ---------------------- BUTTON ---------------------- */
-
 .cta-btn {
     display: inline-block;
     margin-top: 2rem;
@@ -836,8 +899,6 @@
     background: #000;
 }
 
-
-/* DESIGNED FOR YOU */
 .designed-section {
     padding: 3rem 5vw;
     max-width: 100rem;
@@ -867,12 +928,10 @@
 
 .designed-item img {
     width: 100%;
-    height: 55vh;
     object-fit: cover;
     border-radius: 0.5rem;
 }
 
-/* FEATURES */
 .features-section {
     padding: 4rem 5vw;
     background-color: #ffffff;
@@ -913,7 +972,6 @@
     height: 3rem;
     object-fit: contain;
     filter: brightness(0) invert(1);
-    /* Makes icons white */
 }
 
 .feature-item h3 {
@@ -923,14 +981,12 @@
     font-weight: 600;
 }
 
-/* FOOTER */
 .footer {
     padding: 2rem 3vw;
     background-color: #2b2b2b;
     color: #ffffff;
 }
 
-/* MAIN WRAPPER */
 .footer-inner {
     max-width: 85rem;
     margin: 0 auto;
@@ -940,7 +996,6 @@
     gap: 5vw;
 }
 
-/* LEFT SECTION */
 .footer-left {
     flex: 1;
     display: flex;
@@ -969,26 +1024,25 @@
     font-size: 1rem;
 }
 
-/* CENTER SECTION */
 .footer-center {
-    flex: 1;
+    flex: 0 0 auto;
     display: flex;
     text-align: left;
     flex-direction: column;
-    align-items: center;     /* CENTER horizontally */
+    align-items: flex-start;    
     justify-content: flex-start;
-    gap: 15px;
+    gap: 1rem;
 }
 
 .footer-center h4 {
     font-size: 1.6rem;
     font-weight: 700;
+    margin: 0;
 }
 
-/* SOCIAL ICONS */
 .social-row {
     display: flex;
-    gap: 1rem;
+    gap: 0.8rem;
     align-items: center;
     justify-content: flex-start;
 }
@@ -1009,12 +1063,10 @@
     filter: brightness(0) invert(1);
 }
 
-/* RIGHT GAP (invisible, used for alignment) */
 .footer-gap {
     flex: 1;
 }
 
-/* FOOTER BOTTOM */
 .footer-bottom {
     max-width: 85rem;
     margin: 3rem auto 0;
@@ -1044,4 +1096,1066 @@
 .footer-bottom a {
     font-size: 1rem;
     color: #b3b3b3;
+}
+
+/* ========== RESPONSIVE STYLES ========== */
+
+/* Tablet (max-width: 1024px) */
+@media (max-width: 1024px) {
+    .top-bar {
+        padding: 0 2vw;
+        gap: 1rem;
+    }
+
+    .logo-box img {
+        width: 5.5rem;
+    }
+
+    .nav-item {
+        padding: 0.9rem 0.8rem;
+        font-size: 0.88rem;
+        gap: 0.4rem;
+    }
+
+    .nav-icon {
+        width: 1.2rem;
+    }
+
+    .mega-menu {
+        padding: 1.5rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .transport-columns {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .transport-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .activities-columns {
+        grid-template-columns: repeat(3, minmax(150px, 1fr));
+    }
+
+    .card-row {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Mobile Landscape & Small Tablets (max-width: 768px) */
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 2vw;
+        gap: 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .logo-box {
+        flex-shrink: 0;
+    }
+
+    .logo-box img {
+        width: 5.5rem;
+    }
+
+    /* HAMBURGER MENU */
+    .navbar {
+        display: none;
+    }
+
+    .navbar.active {
+        display: flex;
+    }
+
+    /* Menu Button */
+    .menu-btn {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #2d2d2d;
+        color: #fff;
+        border: none;
+        padding: 0.6rem 1rem;
+        border-radius: 0.3rem;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+    }
+
+    .menu-btn:hover {
+        background: #1a1a1a;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+    }
+
+    .nav-item {
+        padding: 0.8rem 1rem;
+        font-size: 0.85rem;
+        border-right: none;
+        border-bottom: 0.1rem solid rgba(255, 255, 255, 0.3);
+        width: 100%;
+    }
+
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 100vh;
+        padding-top: 200px;
+        flex-direction: column;
+    }
+
+    .hero-text {
+        max-width: 90vw;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 8rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 1.2rem;
+    }
+
+    .mega-menu {
+        top: auto;
+        position: relative;
+        flex-direction: column;
+        padding: 1.5rem 1.5rem;
+        display: none !important;
+    }
+
+    .mega-col {
+        min-width: 100%;
+    }
+
+    .dest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards-col {
+        max-width: 100%;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .v-card {
+        max-width: 100%;
+    }
+
+    .v-card img {
+        height: 6rem;
+    }
+
+    /* TOURS SECTION */
+    .tours-section {
+        padding: 2rem 3vw;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+    }
+
+    .section-link {
+        font-size: 1rem;
+    }
+
+    .tours-container {
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+
+    .tours-left {
+        flex: 1;
+        gap: 0;
+    }
+
+    .tour-card {
+        flex-direction: row;
+        gap: 0.8rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .tour-image {
+        width: 120px;
+        min-width: 120px;
+        height: 120px;
+    }
+
+    .tour-content {
+        padding: 0.8rem 1rem;
+    }
+
+    .tour-content h3 {
+        font-size: 1rem;
+    }
+
+    .tours-right {
+        flex: 1;
+    }
+
+    .featured-card {
+        width: 100%;
+        height: 30rem;
+    }
+
+    .nav-item.activities .mega-menu {
+        padding: 1.5rem 1.5rem;
+    }
+
+    .activities-columns {
+        grid-template-columns: 1fr;
+        gap: 0.8rem 1.5rem;
+    }
+
+    .nav-item.transport .mega-menu {
+        flex-direction: column;
+        padding: 1.5rem 1.5rem;
+    }
+
+    .transport-columns {
+        grid-template-columns: 1fr;
+        gap: 0.8rem 1.5rem;
+    }
+
+    .transport-card-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .transport-card img {
+        height: 120px;
+    }
+
+    .footer-inner {
+        flex-direction: column;
+        gap: 2rem;
+        align-items: flex-start;
+    }
+
+    .footer-left,
+    .footer-center {
+        width: 100%;
+    }
+
+    .footer-gap {
+        display: none;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .footer-bottom .left,
+    .footer-bottom .footer-link,
+    .footer-bottom .right {
+        text-align: center;
+    }
+
+    /* LAST MINUTE SECTION */
+    .last-minute-section {
+        min-height: auto;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+    }
+
+    .bg-top-image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+        padding: 1.5rem 2rem 0 2rem;
+        z-index: 6;
+    }
+
+    .bg-top-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 250px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .bg-bottom-image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        order: 5;
+        padding: 2rem 2rem 2rem 2rem;
+        right: auto;
+        bottom: auto;
+        z-index: 6;
+    }
+
+    .bg-bottom-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 250px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .last-minute-label {
+        position: static;
+        width: 80%;
+        max-width: 600px;
+        background: #2d2d2d;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.15;
+        padding: 2rem 2rem;
+        border-radius: 0.3rem;
+        z-index: 12;
+        text-transform: uppercase;
+        margin: 2rem auto 0 auto;
+        display: block;
+        order: 2;
+    }
+
+    .last-minute-content-wrapper {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem 2rem;
+        z-index: 12;
+        order: 3;
+        background-color: transparent;
+    }
+
+    .last-minute-content {
+        max-width: 100%;
+    }
+
+    .last-minute-content h2 {
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: #2d2d2d;
+        margin-bottom: 1.2rem;
+    }
+
+    .last-minute-content p {
+        font-size: 1rem;
+        line-height: 1.7rem;
+        color: #555;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: 1rem 2.5rem;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-size: 0.95rem;
+        order: 4;
+    }
+
+    .last-minute-content h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #2d2d2d;
+        margin-bottom: 1rem;
+    }
+
+    .last-minute-content p {
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+        color: #333;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.8rem 2rem;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        order: 4;
+    }
+
+    /* DESIGNED FOR YOU SECTION */
+    .designed-section {
+        padding: 2rem 3vw;
+    }
+
+    .section-header h2 {
+        font-size: 2rem;
+        margin-bottom: 2rem;
+    }
+
+    .designed-grid {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .designed-item {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .designed-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile (max-width: 480px) */
+@media (max-width: 480px) {
+    .logo-box img {
+        width: 5rem;
+    }
+
+    .nav-item {
+        padding: 0.7rem 0.5rem;
+        font-size: 0.75rem;
+        gap: 0.3rem;
+    }
+
+    .nav-icon {
+        width: 1rem;
+    }
+
+    .mega-menu {
+        padding: 1rem;
+        gap: 1rem;
+    }
+
+    .mega-col h3 {
+        font-size: 0.95rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .mega-col a {
+        font-size: 0.85rem;
+    }
+
+    .dest-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .card-row {
+        grid-template-columns: 1fr;
+    }
+
+    .v-card {
+        max-width: 100%;
+    }
+
+    .activities-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .transport-columns {
+        grid-template-columns: 1fr;
+    }
+
+    .transport-card-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 10rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 0.9rem;
+    }
+
+    .social-row {
+        flex-wrap: wrap;
+        gap: 0.6rem;
+    }
+
+    .social-circle {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .social-circle img {
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .footer-left h4,
+    .footer-center h4 {
+        font-size: 1.3rem;
+    }
+
+    .footer-item p {
+        font-size: 0.9rem;
+    }
+
+    /* LAST MINUTE SECTION */
+    .last-minute-section {
+        min-height: auto;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bg-top-image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        order: 1;
+        padding: 1.2rem 1.5rem 0 1.5rem;
+        z-index: 6;
+    }
+
+    .bg-top-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .bg-bottom-image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        order: 5;
+        padding: 1.5rem 1.5rem 1.5rem 1.5rem;
+        right: auto;
+        bottom: auto;
+        z-index: 6;
+    }
+
+    .bg-bottom-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 200px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .last-minute-label {
+        position: static;
+        width: 90%;
+        max-width: 550px;
+        background: #2d2d2d;
+        color: white;
+        font-size: 1.8rem;
+        font-weight: 800;
+        line-height: 1.15;
+        padding: 1.5rem 1.5rem;
+        border-radius: 0.3rem;
+        z-index: 12;
+        text-transform: uppercase;
+        margin: 1.5rem auto 0 auto;
+        display: block;
+        order: 2;
+    }
+
+    .last-minute-content-wrapper {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 1.5rem 1.5rem;
+        z-index: 12;
+        order: 3;
+        background-color: transparent;
+    }
+
+    .last-minute-content {
+        max-width: 100%;
+    }
+
+    .last-minute-content h2 {
+        font-size: 1.8rem;
+        font-weight: 800;
+        color: #2d2d2d;
+        margin-bottom: 1rem;
+    }
+
+    .last-minute-content p {
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+        color: #555;
+    }
+
+    .cta-btn {
+        display: inline-block;
+        margin-top: 1.5rem;
+        padding: 0.9rem 2rem;
+        background: #1a1a1a;
+        color: #fff;
+        border-radius: 30px;
+        font-weight: 700;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+        font-size: 0.9rem;
+        order: 4;
+    }
+
+    /* DESIGNED FOR YOU SECTION */
+    .designed-section {
+        padding: 1.5rem 4vw;
+    }
+
+    .section-header h2 {
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .designed-grid {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .designed-item {
+        flex: 1 1 100%;
+        width: 100%;
+    }
+
+    .designed-item img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+/* Small Tablet (560px to 660px) */
+@media (min-width: 560px) and (max-width: 660px) {
+    /* FLEET SECTION */
+    .fleet-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.25rem;
+        flex-wrap: nowrap;
+    }
+
+    .fleet-card {
+        flex: none;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        box-sizing: border-box;
+    }
+
+    .fleet-image {
+        width: 100%;
+        height: 11rem;
+        object-fit: cover;
+        display: block;
+        background-color: #fff;
+    }
+
+    .fleet-content {
+        padding: 1rem;
+    }
+
+    .fleet-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .fleet-row:last-child .fleet-card {
+        max-width: none;
+    }
+}
+
+/* Tablet Medium (650px to 750px) */
+@media (min-width: 650px) and (max-width: 750px) {
+    /* WEEKEND SECTION */
+    .weekend-section {
+        padding: 3rem 5vw;
+    }
+
+    .weekend-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .weekend-card {
+        flex: none;
+        min-width: unset;
+        width: 100%;
+        height: 18rem;
+    }
+}
+
+/* Medium Tablet (853px to 899px) */
+@media (min-width: 768px) and (max-width: 1000px) {
+    /* FLEET SECTION */
+    .fleet-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .fleet-card {
+        flex: none;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .fleet-row:last-child .fleet-card {
+        max-width: none;
+    }
+
+    /* FEATURES SECTION */
+    .features-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .feature-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .feature-icon img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .feature-item h3 {
+        font-size: 0.95rem;
+    }
+}
+
+/* Tablet Large (750px to 900px) */
+@media (min-width: 750px) and (max-width: 900px) {
+    .top-bar {
+        padding: 0 1vw;
+        gap: 0.8rem;
+    }
+
+    .logo-box img {
+        width: 5.5rem;
+    }
+
+    .navbar {
+        flex-wrap: wrap;
+        max-width: calc(100% - 100px);
+    }
+
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: flex-end;
+    }
+
+    .nav-item {
+        padding: 0.8rem 0.6rem;
+        font-size: 0.8rem;
+        gap: 0.35rem;
+        border-right: 0.05rem solid rgba(255, 255, 255, 0.3);
+    }
+
+    .nav-icon {
+        width: 1.1rem;
+    }
+
+    .hero {
+        height: 100vh;
+    }
+
+    .hero-text {
+        max-width: 60vw;
+    }
+
+    .hero-subtitle {
+        margin-bottom: 28rem;
+        font-size: 0.9rem;
+    }
+
+    .hero-title {
+        font-size: 0.9rem;
+    }
+
+    .hero-link {
+        font-size: 0.95rem;
+    }
+
+    .tours-section {
+        padding: 2rem 2vw;
+    }
+
+    .section-header h2 {
+        font-size: 1.9rem;
+    }
+
+    .section-link {
+        font-size: 1rem;
+    }
+
+    .tours-container {
+        gap: 1.2rem;
+    }
+
+    .tours-left {
+        flex: 1.5;
+    }
+
+    .tour-image {
+        width: 130px;
+        min-width: 130px;
+        height: 130px;
+    }
+
+    .tour-card {
+        gap: 0.8rem;
+    }
+
+    .tour-content {
+        padding: 0.8rem 1rem;
+    }
+
+    .tour-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .featured-card {
+        height: 340px;
+    }
+
+    /* WEEKEND SECTION */
+    .weekend-section {
+        padding: 3rem 5vw;
+    }
+
+    .weekend-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .weekend-card {
+        flex: none;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .mega-menu {
+        padding: 1.5rem 2rem;
+        gap: 1.5rem;
+    }
+
+    .nav-item.activities .mega-menu {
+        padding: 1.5rem 2rem 1.5rem;
+    }
+
+    .nav-item.transport .mega-menu {
+        padding: 1.5rem 2rem 1.5rem;
+    }
+
+    .transport-columns {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.6rem 1.5rem;
+    }
+
+    .activities-columns {
+        grid-template-columns: repeat(2, minmax(140px, 1fr));
+        gap: 0.6rem 1.5rem;
+    }
+
+    .transport-card-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    .card-row {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 0.8rem;
+    }
+
+    .mega-col h3 {
+        font-size: 1rem;
+    }
+
+    .mega-col a {
+        font-size: 0.9rem;
+    }
+}
+
+/* Medium Tablet (900px to 1024px) */
+@media (min-width: 900px) and (max-width: 1150px) {
+    .top-bar {
+        padding: 0 2vw;
+    }
+
+    .logo-box img {
+        width: 5.8rem;
+    }
+
+    .navbar {
+        max-width: calc(100% - 150px);
+        flex-shrink: 1;
+    }
+
+    .nav-item {
+        padding: 0.85rem 0.7rem;
+        font-size: 0.85rem;
+        gap: 0.35rem;
+    }
+
+    .nav-icon {
+        width: 1.2rem;
+    }
+
+    .tours-section {
+        padding: 2.5rem 4vw;
+        max-width: 95rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.2rem;
+    }
+
+    .tours-container {
+        gap: 1.8rem;
+    }
+
+    .tour-image {
+        width: 145px;
+        height: 145px;
+    }
+
+    .featured-card {
+        height: 360px;
+    }
+
+    /* WEEKEND SECTION */
+    .weekend-section {
+        padding: 3rem 5vw;
+    }
+
+    .weekend-row {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .weekend-card {
+        flex: none;
+        min-width: unset;
+        width: 100%;
+    }
+
+    /* FLEET SECTION */
+    .fleet-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        flex-wrap: nowrap;
+    }
+
+    .fleet-card {
+        flex: none;
+        min-width: unset;
+        width: 100%;
+    }
+
+    .fleet-row:last-child .fleet-card {
+        max-width: none;
+    }
+}
+
+/* Large Tablet / Small Desktop (1024px to 1200px) */
+@media (min-width: 1024px) and (max-width: 1200px) {
+    .top-bar {
+        padding: 0 3vw;
+    }
+
+    .logo-box img {
+        width: 6.5rem;
+    }
+
+    .nav-item {
+        padding: 1rem 1rem;
+        font-size: 0.92rem;
+        gap: 0.5rem;
+    }
+
+    .tours-section {
+        padding: 3rem 4vw;
+        max-width: 95rem;
+    }
+
+    .section-header h2 {
+        font-size: 2.3rem;
+    }
+
+    .tours-container {
+        gap: 2rem;
+    }
+
+    .tour-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .featured-card {
+        height: 370px;
+    }
+}
+
+/* Desktop Large (1200px and above) */
+@media (min-width: 1200px) {
+    .menu-btn {
+        display: none !important;
+    }
+
+    .navbar {
+        display: flex !important;
+    }
 }

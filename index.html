@@ -10,25 +10,23 @@
 </head>
 
 <body>
-    <!-- MAIN HERO SECTION -->
     <header class="hero">
         <div class="top-bar">
-            <!-- LEFT LOGO -->
             <div class="logo-box">
                 <img src="images/logo.png" alt="Travel &amp; Tours Logo">
             </div>
 
-            <!-- RIGHT NAVBAR -->
-            <nav class="navbar">
+            <!-- MOBILE MENU BUTTON -->
+            <button class="menu-btn" onclick="toggleMenu()">MENU ☰</button>
+
+            <nav class="navbar" id="navbar">
                 <ul class="nav-list">
                     <li class="nav-item dropdown">
                         <img src="images/icons/tree.png" class="nav-icon" alt="">
                         Vacations ▼
 
-                        <!-- MEGA MENU -->
                         <div class="mega-menu">
 
-                            <!-- LEFT COLUMN -->
                             <div class="mega-col">
                                 <h3>Browse By Experience</h3>
                                 <a href="#">Adventure</a>
@@ -43,12 +41,11 @@
                                 <a href="#">6 to 9 Days</a>
 
                                 <h3>Honeymoon</h3>
-                                <p>Explore best deals on Honeymoon vacation packages at lowest prices.
+                                <p>Explore best deals on Honeymoon <br> vacation packages <br> at lowest prices.
                                     <a href="#">Find More</a>
                                 </p>
                             </div>
 
-                            <!-- MIDDLE COLUMN -->
                             <div class="mega-col">
                                 <h3>Browse By Destination</h3>
 
@@ -79,16 +76,9 @@
 
                                     <h4>Microadventures</h4>
                                     <p>Short adventures near home for nature lovers.</p>
-
-                                    <h4>Girls Weekend Club</h4>
-                                    <p>An exclusive platform for fun getaways.</p>
-
-                                    <h4>Corporate Adventure Retreats</h4>
-                                    <p>Perfect for team-building and corporate wellness.</p>
                                 </div>
                             </div>
 
-                            <!-- RIGHT COLUMN (CARDS) -->
                             <div class="mega-col cards-col">
 
                                 <div class="card-row">
@@ -159,20 +149,173 @@
                         </div>
                     </li>
 
-                    <!-- REST OF NAV ITEMS (unchanged) -->
                     <li class="nav-item">
                         <img src="images/icons/location.png" class="nav-icon">
                         Destinations 
                     </li>
 
-                    <li class="nav-item">
+                    <li class="nav-item dropdown activities">
                         <img src="images/icons/share.png" class="nav-icon">
                         Activities ▼
+                        <div class="mega-menu activities-menu">
+                            <div class="activities-menu-heading">Adventure Sports &amp; Activities</div>
+
+                            <div class="activities-columns">
+                                <div class="mega-col">
+                                    <h3>Water Sports</h3>
+                                    <a href="#">Jet Ski</a>
+                                    <a href="#">Speed Boating</a>
+                                    <a href="#">Family Boating</a>
+                                    <a href="#">Cliff Diving</a>
+                                    <a href="#">Wake Tubing</a>
+                                    <a href="#">Banana Boating</a>
+                                    <a href="#">Scuba Diving</a>
+                                    <a href="#">Snorkeling</a>
+                                    <a href="#">Parasailing</a>
+                                    <a href="#">Water Skiing</a>
+                                    <a href="#">Wind Surfing</a>
+                                    <a href="#">Kayaking</a>
+                                    <a href="#">Crabbing</a>
+                                    <a href="#">Fishing</a>
+                                    <a href="#">Water Polo</a>
+                                    <a href="#">Wet &amp; Wild Water Rides</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Air Sports</h3>
+                                    <a href="#">Aerial Joyride</a>
+                                    <a href="#">Paragliding</a>
+                                    <a href="#">Hot Air Balloons</a>
+                                    <a href="#">Hang Gliding</a>
+                                    <a href="#">Motor Gliding</a>
+                                    <a href="#">ParaTrike</a>
+
+                                    <h3>Safari</h3>
+                                    <a href="#">Air Safari</a>
+                                    <a href="#">Jeep Safari</a>
+                                    <a href="#">Camel Safari</a>
+                                    <a href="#">Desert Safari</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Mountain Adventure</h3>
+                                    <a href="#">Climbing</a>
+                                    <a href="#">Repelling</a>
+                                    <a href="#">Mountaineering</a>
+                                    <a href="#">Hiking</a>
+                                    <a href="#">Trekking</a>
+                                    <a href="#">Caving</a>
+                                    <a href="#">Cycling</a>
+                                    <a href="#">Zipline</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Other Adventures</h3>
+                                    <a href="#">Camping</a>
+                                    <a href="#">ATVs</a>
+                                    <a href="#">Archery</a>
+                                    <a href="#">PaintBall</a>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
-                    <li class="nav-item">
-                        <img src="images/icons/cart.png" class="nav-icon">
+                    <li class="nav-item dropdown transport">
+                        <img src="images/icons/cart.png" class="nav-icon" alt="">
                         Transport ▼
+                        <div class="mega-menu transport-menu">
+                            <div class="transport-columns">
+                                <div class="mega-col">
+                                    <h3>Compact Hatchbacks</h3>
+                                    <a href="#">Suzuki Wagon R</a>
+                                    <a href="#">Suzuki Cultus</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>SUVs</h3>
+                                    <a href="#">Toyota Fortuner</a>
+                                    <a href="#">Toyota Land Cruiser Prado</a>
+                                    <a href="#">Toyota Land Cruiser V8</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Commercial Vehicles</h3>
+                                    <a href="#">Toyota Hiace Highroof 9 Seater</a>
+                                    <a href="#">Toyota Grand Cabin Hiace</a>
+                                    <a href="#">Toyota Saloon Coaster</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Comfortable Sedans</h3>
+                                    <a href="#">Honda City</a>
+                                    <a href="#">Toyota Corolla</a>
+                                    <a href="#">Honda Civic</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Luxury Cars</h3>
+                                    <a href="#">Mercedes</a>
+                                    <a href="#">BMW</a>
+                                    <a href="#">Audi</a>
+                                </div>
+
+                                <div class="mega-col">
+                                    <h3>Family Station Wagons</h3>
+                                    <a href="#">BRV</a>
+                                    <a href="#">APV</a>
+                                    <a href="#">MPVs</a>
+                                </div>
+                            </div>
+
+                            <div class="transport-cards-block">
+                                <div class="transport-cards-heading">Explore Our Latest Car Rentals</div>
+                                <div class="transport-card-grid">
+                                    <div class="transport-card">
+                                        <img src="images/bus.png" alt="Luxury bus">
+                                        <div class="transport-card-body">
+                                            <h4>Bus</h4>
+                                            <p class="type">Buses</p>
+                                            <p class="price">From Rs 45000</p>
+                                            <p class="specs">45 adults • 45 bag • A/C</p>
+                                            <button class="book-btn">Book Now</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="transport-card">
+                                        <img src="images/brv.jpg" alt="Honda BRV">
+                                        <div class="transport-card-body">
+                                            <h4>Honda BRV</h4>
+                                            <p class="type">Family Car</p>
+                                            <p class="price">From Rs 8000</p>
+                                            <p class="specs">6 adults • 2 bag • A/C</p>
+                                            <button class="book-btn">Book Now</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="transport-card">
+                                        <img src="images/civic.jpg" alt="Honda Civic">
+                                        <div class="transport-card-body">
+                                            <h4>Honda Civic</h4>
+                                            <p class="type">Sedans</p>
+                                            <p class="price">From Rs 10000</p>
+                                            <p class="specs">5 adults • 2 bag • A/C</p>
+                                            <button class="book-btn">Book Now</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="transport-card">
+                                        <img src="images/cultus.jpeg" alt="Suzuki Cultus">
+                                        <div class="transport-card-body">
+                                            <h4>Suzuki Cultus</h4>
+                                            <p class="type">Hatchbacks</p>
+                                            <p class="price">From Rs 5000</p>
+                                            <p class="specs">4 adults • 1 bag • A/C</p>
+                                            <button class="book-btn">Book Now</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </li>
 
                     <li class="nav-item">
@@ -187,19 +330,14 @@
                 </ul>
             </nav>
 
-             
-
         </div>
 
         <div class="hero-text">
-            <!-- ARE YOU LOOKING FOR A FAMILY VACATION IN PAKISTAN? -->
-            <p class="hero-subtitle"></p>
             <h1 class="hero-title">DISCOVERY OF NATURAL WONDERS</h1>
             <a href="#" class="hero-link">What our team has found on Rhodes</a>
         </div>
     </header>
 
-    <!-- POPULAR TOURS -->
     <section class="tours-section">
         <div class="section-header">
             <h2>Explore our top offers</h2>
@@ -207,9 +345,7 @@
         </div>
 
         <div class="tours-container">
-            <!-- Left Column - Tour Cards -->
             <div class="tours-left">
-                <!-- Tour Card 1 -->
                 <div class="tour-card">
                     <img src="images/skardu.jpg" alt="Gilgit Baltistan" class="tour-image">
                     <div class="tour-content">
@@ -231,7 +367,6 @@
                     </div>
                 </div>
 
-                <!-- Tour Card 2 -->
                 <div class="tour-card">
                     <img src="images/skardu.jpg" alt="Skardu" class="tour-image">
                     <div class="tour-content">
@@ -253,7 +388,6 @@
                     </div>
                 </div>
 
-                <!-- Tour Card 3 -->
                 <div class="tour-card">
                     <img src="images/baltit-fort.jpg" alt="Hunza" class="tour-image">
                     <div class="tour-content">
@@ -275,7 +409,6 @@
                     </div>
                 </div>
 
-                <!-- Tour Card 4 -->
                 <div class="tour-card">
                     <img src="images/fairy meadow.jpg" alt="Fairy Meadows" class="tour-image">
                     <div class="tour-content">
@@ -297,7 +430,6 @@
                     </div>
                 </div>
 
-                <!-- Tour Card 5 -->
                 <div class="tour-card">
                     <img src="images/chitral.jpg" alt="Chitral and Kailash" class="tour-image">
                     <div class="tour-content">
@@ -320,9 +452,7 @@
                 </div>
             </div>
 
-            <!-- Right Column - Featured Cards -->
             <div class="tours-right">
-                <!-- Featured Card 1 -->
                 <div class="featured-card">
                     <span class="badge best-seller">BEST SELLER</span>
                     <img src="images/airplane.jpg" alt="Lahore Aerial Joyride" class="featured-image">
@@ -342,7 +472,6 @@
                     </div>
                 </div>
 
-                <!-- Featured Card 2 -->
                 <div class="featured-card">
                     <span class="badge popular">POPULAR</span>
                     <img src="images/lahore.jpg" alt="Lahore Walled City Tour" class="featured-image">
@@ -365,13 +494,11 @@
         </div>
     </section>
 
-    <!-- WEEKEND GETAWAYS -->
     <section class="weekend-section">
         <div class="section-header">
             <h2>Weekend Getaways</h2>
         </div>
         <div class="weekend-container">
-            <!-- Row 1 -->
             <div class="weekend-row">
                 <div class="weekend-card">
                     <img src="images/malam-jabba.jpeg" alt="2 Days Gabin Jabba" class="weekend-image">
@@ -428,7 +555,6 @@
                 </div>
             </div>
 
-            <!-- Row 2 -->
             <div class="weekend-row">
                 <div class="weekend-card">
                     <img src="images/sharan-foresr.jpg" alt="2 Days Sharan Forest" class="weekend-image">
@@ -487,7 +613,6 @@
         </div>
     </section>
 
-    <!-- EXPLORE OUR FLEET -->
     <section class="fleet-section">
         <div class="section-header">
             <h2>Explore our fleet</h2>
@@ -633,10 +758,7 @@
         </div>
     </section>
 
-    <!-- LAST MINUTE OFFERS -->
     <section class="last-minute-section">
-
-        <!-- Background Images -->
         <div class="bg-top-image">
             <img src="images/camping-gear.jpg" alt="Packing Items">
         </div>
@@ -645,12 +767,10 @@
             <img src="images/cap-beach.jpg" alt="Beach Hat Items">
         </div>
 
-        <!-- Black Label -->
         <div class="last-minute-label">
             LAST <br> MINUTE <br> OFFERS
         </div>
 
-        <!-- Text Side -->
         <div class="last-minute-content-wrapper">
             <div class="last-minute-content">
                 <h2>Pack your bags</h2>
@@ -672,8 +792,6 @@
 
     </section>
 
-
-    <!-- DESIGNED FOR YOU -->
     <section class="designed-section">
         <div class="section-header">
             <h2>Designed for you</h2>
@@ -708,8 +826,6 @@
         </div>
     </section>
 
-
-    <!-- KEY FEATURES -->
     <section class="features-section">
         <div class="features-grid">
 
@@ -751,13 +867,8 @@
         </div>
     </section>
 
-
-
-    <!-- FOOTER -->
     <footer class="footer">
     <div class="footer-inner">
-
-        <!-- LEFT SECTION -->
         <div class="footer-left">
             <h4>Travel &amp; Tours</h4>
 
@@ -777,7 +888,6 @@
             </div>
         </div>
 
-        <!-- CENTER SECTION -->
         <div class="footer-center">
             <h4>Follow us</h4>
 
@@ -790,13 +900,9 @@
                 <div class="social-circle"><img src="images/icons/instagram.png" alt="instagram"></div>
             </div>
         </div>
-
-        <!-- EMPTY RIGHT GAP TO MATCH EXPECTED UI -->
         <div class="footer-gap"></div>
 
     </div>
-
-    <!-- FOOTER BOTTOM -->
     <div class="footer-bottom">
         <p class="left">© 2008 - 2022 Travel &amp; Tours</p>
         <a href="#" class="footer-link">FAQs &amp; Refund Policy</a>
@@ -804,7 +910,18 @@
     </div>
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const navbar = document.getElementById('navbar');
+            navbar.classList.toggle('active');
+        }
 
+        // Close menu when clicking on a nav item
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                document.getElementById('navbar').classList.remove('active');
+            });
+        });
+    </script>
 </body>
-
 </html>
