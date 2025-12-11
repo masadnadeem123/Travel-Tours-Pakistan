@@ -9,6 +9,7 @@ html, body {
     width: 100%;
     overflow-x: hidden;
     max-width: 100vw;
+    background-color: #e7e6e6;
 }
 
 .hero {
@@ -86,8 +87,10 @@ html, body {
 .navbar {
     width: auto;
     background: #d9531e;
+    margin-left: auto;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     border-radius: 0;
     overflow: visible;
     position: relative;
@@ -254,7 +257,7 @@ html, body {
 
 .transport-card img {
     width: 100%;
-    height: 140px;
+    height: 8.75rem;
     object-fit: contain;
     object-position: center;
     border-radius: 0.4rem;
@@ -439,7 +442,6 @@ html, body {
     padding: 3rem 5vw;
     max-width: 90rem;
     margin: 0 auto;
-    background-color: #f5f5f5;
 }
 
 .section-header {
@@ -633,7 +635,6 @@ html, body {
     padding: 3rem 5vw;
     max-width: 90rem;
     margin: 0 auto;
-    background-color: #e7e6e6;
     overflow-x: hidden;
 }
 
@@ -709,7 +710,6 @@ html, body {
     padding: 3rem 5vw;
     max-width: 90rem;
     margin: 0 auto;
-    background-color: #f5f5f5;
     overflow-x: hidden;
 }
 
@@ -727,8 +727,8 @@ html, body {
 
 .fleet-row:last-child .fleet-card {
     flex: 1;
-    min-width: 18rem;
-    max-width: 25rem;
+    min-width: 24rem;
+    max-width: 35rem;
 }
 
 .fleet-card {
@@ -781,7 +781,7 @@ html, body {
     font-weight: bold;
     margin: 0.25rem 0;
     padding-bottom: 0.5rem;
-    border-bottom: 0.1rem solid #eeeeee;
+    border-bottom: 0.1rem solid #a09c9c;
 }
 
 .fleet-price strong {
@@ -792,12 +792,16 @@ html, body {
     font-size: 0.9rem;
     color: #666666;
     margin: 0.5rem 0 0 0;
+    border-bottom: 0.1rem solid #a09c9c ;
 }
 
 .fleet-btn {
-    margin-top: 1rem;
-    width: 100%;
+    margin: 1rem auto 0;
+    width: 65%;
     font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .last-minute-section {
@@ -913,13 +917,13 @@ html, body {
     padding: 3rem 5vw;
     max-width: 100rem;
     margin: 0 auto;
-    background-color: #f3eeee;
     overflow-x: hidden;
 }
 
 .section-header h2 {
     text-align: center;
     font-size: 3rem;
+    font-weight: 1000;
     margin-bottom: 3rem;
 }
 
@@ -952,7 +956,7 @@ html, body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    gap: 0.5rem;
     max-width: 100%;
     overflow-x: hidden;
     max-width: 90rem;
@@ -1188,7 +1192,7 @@ html, body {
         flex-direction: column;
         padding: 1rem;
         gap: 1rem;
-        display: none !important;
+        display: none;
     }
 
     .mega-col {
@@ -1227,7 +1231,7 @@ html, body {
     .hero {
         height: auto;
         min-height: 100vh;
-        padding-top: 200px;
+        padding-top: 12.5rem;
         flex-direction: column;
     }
 
@@ -1276,9 +1280,9 @@ html, body {
     }
 
     .tour-image {
-        width: 120px;
-        min-width: 120px;
-        height: 120px;
+        width: 7.5rem;
+        min-width: 7.5rem;
+        height: 7.5rem;
     }
 
     .tour-content {
@@ -1349,7 +1353,7 @@ html, body {
     .last-minute-label {
         position: static;
         width: 90%;
-        max-width: 550px;
+        max-width: 200px;
         background: #2d2d2d;
         color: white;
         font-size: 1.8rem;
@@ -1423,6 +1427,14 @@ html, body {
     .designed-item img {
         width: 100%;
         height: auto;
+    }
+
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
     }
 
     .footer-inner {
@@ -1505,6 +1517,34 @@ html, body {
         max-width: 100vw;
         overflow-x: hidden;
     }
+   
+    .fleet-row {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 1.25rem;
+    }
+
+    .fleet-card {
+        flex: none;
+        min-width: 0;
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .fleet-image {
+        width: 100%;
+        height: 11rem;
+        object-fit: cover;
+    }
+
+    .fleet-content {
+        padding: 1rem;
+    }
+
+    .fleet-card h3 {
+        font-size: 1.1rem;
+    }    
 
     .mega-col,
     .tours-right,
@@ -1599,7 +1639,7 @@ html, body {
     .hero {
         height: auto;
         min-height: 100vh;
-        padding-top: 200px;
+        padding-top: 12.5rem;
         flex-direction: column;
     }
 
@@ -1623,7 +1663,7 @@ html, body {
         position: relative;
         flex-direction: column;
         padding: 1.5rem;
-        display: none !important;
+        display: none;
     }
 
     .mega-col {
@@ -1700,6 +1740,7 @@ html, body {
     .featured-card {
         width: 100%;
         height: 30rem;
+        width: 100vw;
     }
 
     .nav-item.activities .mega-menu,
@@ -1726,6 +1767,11 @@ html, body {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         gap: 1.25rem;
+    }
+    .fleet-row:last-child .fleet-card {
+        flex: 1;
+        min-width: 10rem;
+        max-width: 35rem;
     }
 
     .fleet-card {
@@ -1756,7 +1802,7 @@ html, body {
 
     .weekend-row {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         gap: 1.5rem;
     }
 
@@ -1764,7 +1810,7 @@ html, body {
         flex: none;
         min-width: unset;
         width: 100%;
-        height: 18rem;
+        height: 22rem;
     }
 
     .last-minute-section {
@@ -1819,7 +1865,7 @@ html, body {
     .last-minute-label {
         position: static;
         width: 80%;
-        max-width: 600px;
+        max-width: 250px;
         background: #2d2d2d;
         color: white;
         font-size: 2.2rem;
@@ -1829,7 +1875,7 @@ html, body {
         border-radius: 0.3rem;
         z-index: 12;
         text-transform: uppercase;
-        margin: 2rem auto 0;
+        margin:2rem auto 0;
         display: block;
         order: 2;
     }
@@ -1899,6 +1945,13 @@ html, body {
         width: 100%;
         height: auto;
     }
+    .features-grid {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1.5rem;
+    }
 
     .footer-inner {
         flex-direction: column;
@@ -1938,14 +1991,18 @@ html, body {
         width: 5.5rem;
     }
 
+    .navbar{
+        display: flex;
+    }
+
     .nav-item {
-        padding: 0.9rem 0.8rem;
-        font-size: 0.88rem;
-        gap: 0.4rem;
+        padding: 1rem 0.7rem;
+        font-size: 0.6rem;
+        gap: 0.25rem;
     }
 
     .nav-icon {
-        width: 1.2rem;
+        width: 0.7rem;
     }
 
     .hero {
@@ -2032,9 +2089,9 @@ html, body {
     }
 
     .tour-image {
-        width: 130px;
-        min-width: 130px;
-        height: 130px;
+        width: 9rem;
+        min-width: 9rem;
+        height: 9rem;
     }
 
     .tour-content {
@@ -2140,12 +2197,12 @@ html, body {
     }
 
     .tour-image {
-        width: 150px;
-        height: 150px;
+       width: 9.375rem;
+       height: 9.375rem;
     }
 
     .featured-card {
-        height: 370px;
+        height: 23.125rem;
     }
 
     .weekend-section {
@@ -2183,11 +2240,11 @@ html, body {
 
 @media (min-width: 1201px) {
     .menu-btn {
-        display: none !important;
+        display: none;
     }
 
     .navbar {
-        display: flex !important;
+        display: flex;
     }
 
     .top-bar {
@@ -2254,7 +2311,7 @@ html, body {
     .fleet-row {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 1.5rem;
+        gap: 2.5rem;
     }
 
     .fleet-card {
@@ -2264,6 +2321,8 @@ html, body {
     }
 
     .fleet-row:last-child .fleet-card {
-        max-width: none;
+        flex: 1;
+        min-width: 22rem;
+        max-width: 35rem;
     }
 }
