@@ -2427,6 +2427,6 @@ html, body {
     .fleet-row:last-child .fleet-card {
         flex: 1;
         min-width: 22rem;
-        max-width: 35rem;
+        max-width: 50rem;
     }
 }
