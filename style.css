@@ -2247,7 +2247,8 @@ html, body {
     }
 
     .fleet-row:last-child .fleet-card {
-        max-width: none;
+        max-width: 40rem;
+        min-width: 12rem;
     }
 
     .features-grid {
@@ -2340,7 +2341,8 @@ html, body {
     }
 
     .fleet-row:last-child .fleet-card {
-        max-width: none;
+        max-width: 30rem;
+        min-width: 10rem;
     }
 }
 
