@@ -2251,6 +2251,101 @@ html, body {
         min-width: 12rem;
     }
 
+     .last-minute-section {
+        min-height: auto;
+        padding: 0;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+    }
+
+    .bg-top-image {
+        position: static;
+        width: 100%;
+        max-width: 90vw;
+        order: 1;
+        padding: 1.5rem 2rem 0 2rem;
+        z-index: 6;
+    }
+
+    .bg-top-image img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        min-height: 250px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+    .bg-bottom-image {
+        position: static;
+        width: 100%;
+        max-width: 100%;
+        order: 5;
+        padding: 2rem;
+        right: auto;
+        bottom: auto;
+        z-index: 6;
+    }
+
+    .bg-bottom-image img {
+        width: 100%;
+        max-width: 90vw;
+        height: auto;
+        min-height: 250px;
+        border-radius: 0.8rem;
+        display: block;
+        object-fit: cover;
+    }
+
+     .last-minute-label {
+        position: static;
+        width: 80%;
+        max-width: 200px;
+        background: #2d2d2d;
+        color: white;
+        font-size: 2.2rem;
+        font-weight: 800;
+        line-height: 1.15;
+        padding: 1rem;
+        border-radius: 0.3rem;
+        z-index: 12;
+        text-transform: uppercase;
+        margin: 1.5rem;
+        display: block;
+        order: 2;
+    }
+
+    .last-minute-content-wrapper {
+        position: static;
+        transform: none;
+        width: 100%;
+        max-width: 100%;
+        padding: 2rem;
+        z-index: 12;
+        order: 3;
+        background-color: transparent;
+    }
+
+    .last-minute-content {
+        max-width: 100%;
+    }
+
+    .last-minute-content h2 {
+        font-size: 2rem;
+        font-weight: 800;
+        color: #2d2d2d;
+        margin-bottom: 1rem;
+    }
+
+    .last-minute-content p {
+        font-size: 0.95rem;
+        line-height: 1.6rem;
+        color: #333;
+    }
+
     .features-grid {
         display: flex;
         flex-wrap: nowrap;
