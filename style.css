@@ -1325,6 +1325,7 @@ html, body {
         flex-direction: row;
         gap: 0.8rem;
         margin-bottom: 0.5rem;
+        width: 100%;
     }
 
     .tour-image {
@@ -1346,8 +1347,8 @@ html, body {
     }
 
     .featured-card {
-        width: 100%;
-        height: 30rem;
+        width: 90vw;
+        height: 35rem;
     }
 
     .fleet-row:last-child .fleet-card {
@@ -1847,9 +1848,8 @@ html, body {
     }
 
     .featured-card {
-        width: 100%;
-        height: 40rem;
-        width: 100vw;
+        width:95vw;
+        height: 35rem;
     }
 
     .nav-item.activities .mega-menu,
@@ -2053,7 +2053,7 @@ html, body {
     }
 
     .designed-item img {
-        width: 90vw;
+        width: 95vw;
         height: 30rem;
     }
     .features-grid {
@@ -2341,8 +2341,8 @@ html, body {
     }
 
     .fleet-row:last-child .fleet-card {
-        max-width: 30rem;
-        min-width: 10rem;
+        max-width: 37vw;
+        min-width: 18vw;
     }
 }
 
@@ -2426,7 +2426,7 @@ html, body {
 
     .fleet-row:last-child .fleet-card {
         flex: 1;
-        min-width: 22rem;
-        max-width: 50rem;
+        min-width: 20.4vw;
+        max-width: 50vw;
     }
 }
