@@ -440,7 +440,7 @@ html, body {
 .tours-section {
     padding: 3rem 5vw;
     max-width: 90rem;
-    margin: 0;
+    margin: 0; /* default; overridden for large screens */
 }
 
 .section-header {
@@ -560,7 +560,6 @@ html, body {
 
 .featured-card {
     position: relative;
-    border-radius: 0.5rem;
     overflow: hidden;
     height: 24rem;
     width: 100%;
@@ -1121,6 +1120,10 @@ html, body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.social-circle:hover {
+    background: #000;
 }
 
 .social-circle img {
@@ -2054,7 +2057,7 @@ html, body {
 
     .designed-item img {
         width: 95vw;
-        height: 30rem;
+        height: 40rem;
     }
     .features-grid {
         display: flex;
@@ -2439,6 +2442,24 @@ html, body {
         max-width: 37vw;
         min-width: 18vw;
     }
+    .feature-item {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .feature-icon {
+        width: 4.5rem;
+        height: 4.5rem;
+    }
+
+    .feature-icon img {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+
+    .feature-item h3 {
+        font-size: 0.95rem;
+    }
 }
 
 @media (min-width: 1201px) {
@@ -2472,6 +2493,7 @@ html, body {
     .tours-section {
         padding: 2.5rem 4vw;
         max-width: 95rem;
+        margin: 0 auto;
     }
 
     .section-header h2 {
@@ -2480,6 +2502,8 @@ html, body {
 
     .tours-container {
         gap: 1.8rem;
+        margin: 0 auto;
+        justify-content: center;
     }
 
     .tour-image {
@@ -2521,7 +2545,7 @@ html, body {
 
     .fleet-row:last-child .fleet-card {
         flex: 1;
-        min-width: 20.4vw;
+        min-width: 22rem;
         max-width: 50vw;
     }
 }
