@@ -1,0 +1,229 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="x-ua-compatible" content="ie=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title> Travel & Tours - Service Launching Soon</title>
+  <meta name="robots" content="noindex, follow" />
+   <link rel="icon" href="images/logo.png" type="image/png">
+  <style>
+    :root{
+      --bg: #ffffff;
+      --surface: #f8fafc;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --primary: #0ea5e9;
+      --primary-600: #0284c7;
+      --accent: #f59e0b;
+      --border: #e5e7eb;
+      --danger: #ef4444;
+
+      --ff: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      --radius: 14px;
+      --gap-xs: .25rem;
+      --gap-sm: .5rem;
+      --gap-md: .75rem;
+      --gap-lg: 1rem;
+      --gap-xl: 1.5rem;
+
+      --container-w: 92vw;     
+      --container-max: 60rem;  
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { height: 100%; }
+    body{
+      margin: 0;
+      font-family: var(--ff);
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+    a{ color: inherit; text-decoration: none; }
+
+    .container{
+      width: min(var(--container-w), var(--container-max));
+      min-width: 18rem; /* always pair with max */
+      margin-inline: auto;
+      padding-inline: var(--gap-lg);
+    }
+
+    /* Hero */
+    .hero{
+      position: relative;
+      min-height: 54vh;
+      display:flex; align-items:center; justify-content:center;
+      color: #fff;
+      background: #0b132b url(images/banner-image.jpg) center / cover no-repeat;
+      text-align: center;
+      isolation: isolate;
+    }
+    .hero::after{
+      content:""; position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(0,0,0,.35), rgba(0,0,0,.55));
+      z-index:0;
+    }
+    .hero-content{
+      position: relative; z-index:1;
+      width: 80vw; max-width: 44rem; min-width: 16rem;
+      padding: var(--gap-xl);
+      display:flex; flex-direction:column; align-items:center; gap: var(--gap-md);
+    }
+    .chip{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: .25rem .6rem; border-radius: 999px;
+      background: #ffffff22; border: 1px solid #ffffff55;
+      font-size: .75rem; font-weight: 700; letter-spacing: .3px;
+    }
+    .hero h1{ margin: 0; font-size: clamp(1.5rem, 1.2rem + 2.5vw, 2.5rem); font-weight: 800; }
+    .hero p{ margin: 0; color: #e5e7eb; font-size: clamp(.95rem, .9rem + .5vw, 1.125rem); }
+
+    .cta-row{ display:flex; align-items:center; justify-content:center; gap: var(--gap-md); flex-wrap: wrap; }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: .625rem 1rem; border-radius: 999px; border: 1px solid transparent;
+      font-weight: 600;
+    }
+    .btn-primary{ background: var(--primary); color:#fff; }
+    .btn-primary:hover{ background: var(--primary-600); }
+    .btn-ghost{ background: transparent; color:#fff; border-color: #ffffff80; }
+    .btn-ghost:hover{ background: #ffffff1a; }
+
+    /* Main section */
+    .section{ padding-block: clamp(1rem, .75rem + 2vw, 2.25rem); }
+    .section .section-head{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: var(--gap-sm);
+      margin-bottom: var(--gap-lg);
+    }
+    .title{ margin: 0; font-weight: 700; font-size: clamp(1.125rem, 1rem + 1vw, 1.75rem); }
+    .sub{ color: var(--muted); font-size: .95rem; }
+
+    /* Card */
+    .card{
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      display:flex; flex-direction: column; gap: var(--gap-md);
+      padding: var(--gap-lg);
+    }
+
+    /* Inquiry form (flex layout only) */
+    .form{
+      display:flex; flex-direction: column; gap: var(--gap-md);
+    }
+    .row{ display:flex; gap: var(--gap-md); flex-wrap: wrap; }
+    .field{
+      display:flex; flex-direction: column; gap: .35rem;
+      flex: 1 1 16rem; min-width: 12rem;
+    }
+    label{ font-size: .9rem; color: var(--text); font-weight: 600; }
+    .hint{ font-size: .8rem; color: var(--muted); }
+    input, select, textarea{
+      appearance: none;
+      width: 100%;
+      padding: .625rem .75rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: #fff;
+      color: var(--text);
+      font: inherit;
+    }
+    textarea{ min-height: 7.5rem; resize: vertical; }
+    input:focus, select:focus, textarea:focus{
+      outline: 2px solid transparent;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(14,165,233,.15);
+    }
+
+    /* Footer */
+    .footer{
+      border-top: 1px solid var(--border);
+      padding-block: 1.25rem;
+      color: var(--muted);
+      font-size: .9rem;
+    }
+    .footer .row{ justify-content: space-between; align-items:center; }
+
+    /* Responsive tightening */
+    @media (max-width: 480px){
+      .nav-inner{ font-size: .8125rem; }
+      .section{ padding-block: 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero -->
+  <section class="hero" role="region" aria-label="Service status">
+    <div class="hero-content">
+      <span class="chip">LAUNCHING SOON</span>
+      <h1>This service isn’t available yet</h1>
+      <p>We couldn’t find the service you’re looking for, or it’s not launched yet. Send an inquiry and we’ll update you as soon as it’s available.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#">Send Inquiry</a>
+        <a class="btn btn-ghost" href="index.html">Browse All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main class="section" role="main">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="title">Notify me about this service</h2>
+        <div class="sub">Fill the form and our team will get back to you.</div>
+      </div>
+
+      <div class="card">
+        <form id="inquiry" class="form" method="post">
+          <div class="row">
+            <div class="field">
+              <label for="name">Full name</label>
+              <input id="name" name="name" type="text" autocomplete="name" required placeholder="Jane Doe" />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="jane@example.com" />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field">
+              <label for="phone">Phone</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" placeholder="+1 555 123 4567" />
+              <div class="hint">Optional — include country code.</div>
+            </div>
+            <div class="field">
+              <label for="service">Service of interest</label>
+              <input id="service" name="service" type="text" placeholder="e.g., Maldives Getaway" />
+              <div class="hint">If you followed a link, your service may be prefilled here.</div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="field" style="flex: 1 1 100%; min-width: 100%;">
+              <label for="message">Your message</label>
+              <textarea id="message" name="message" placeholder="Tell us your preferred dates, travelers, budget, or questions…"></textarea>
+            </div>
+          </div>
+
+          <div class="row" style="justify-content: flex-end;">
+            <button class="btn btn-primary" type="submit">Send Inquiry</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container row">
+      <div>© 2025 Travel & Tours</div>
+      <div>We’ll reply within 1–2 business days</div>
+    </div>
+  </footer>
+</body>
+</html>
